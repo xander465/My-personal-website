@@ -1,0 +1,209 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial
+scale=1.0"> 
+<title>Home - Personal Website</title> 
+<link rel="stylesheet" href="style.css"> 
+</head> 
+<body> 
+<header> 
+<h1>Welcome to My Personal Website</h1> 
+</header> 
+<nav> 
+<ul> 
+<li><a href="index.html">HOME</a></li> 
+<li class="dropdown"> 
+<a href="#" class="dropbtn">ABOUT</a> 
+<div class="dropdown-content"> 
+<a href="skills.html">Skills I'm Developing</a> 
+<a href="goals.html">My Goals as a Student</a> 
+<a href="funfacts.html">Fun Facts About Me</a> 
+</div> 
+</li> 
+<li><a href="gallery.html">GALLERY</a></li> 
+<li><a href="contact.html">CONTACT</a></li> 
+<a href="javascript:void(0);" class="logout-button" 
+onclick="confirmLogout()">LOG OUT</a> 
+</ul> 
+</nav> 
+<section id="section2"></section> 
+<div class="slider"> 
+<div class="slides"> 
+<div class="slide"> 
+<img src="IMG_20241116_161332.jpg" alt="Image 1"> 
+<div class="text-overlay"><h1> Welcome to my Website! 
+</h1></div> 
+</div> 
+<div class="slide"> 
+<img src="IMG_20251112_095441.jpg" alt="Image 2"> 
+<div class="text-overlay"><h1> So check out my site </h1></div> 
+</div> 
+<div class="slide"> 
+<img src="slide 3.jpg" alt="Image 3"> 
+<div class="text-overlay"><h1> Check my Skills and fun facts </h1></div> 
+</div> 
+</div> 
+</div> 
+<section id="drop"> 
+<h2>Fun Facts About Me</h2> 
+<p>Welcome to my Fun Facts About Me! Here, you'll get a 
+glimpse into my passions, interests, and the little quirks that 
+make me who I am. </p> 
+<div class="funfact-container"> 
+<div class="funfact-card"> 
+<div class="funfact-inner"> 
+<div class="funfact-front"> 
+<p>I like Programming!</p> 
+</div> 
+<div class="funfact-back"> 
+<p>I can code and can understand of what it can do.</p> 
+</div> 
+</div> 
+</div> 
+<div class="funfact-card"> 
+<div class="funfact-inner"> 
+<div class="funfact-front"> 
+<p>I love Video Games!</p> 
+</div> 
+<div class="funfact-back"> 
+<p>I always liked to play video games from my desktop and consoles!</p> 
+</div> 
+</div> 
+</div> 
+<div class="funfact-card"> 
+<div class="funfact-inner"> 
+<div class="funfact-front"> 
+<p>My favorate Music for foucusing!</p> 
+</div> 
+<div class="funfact-back"> 
+<p>My best focus happens when I’m listening to lo-fi and 
+RNB!</p> 
+</div> 
+</div> 
+</div> 
+<div class="funfact-card"> 
+<div class="funfact-inner"> 
+<div class="funfact-front"> 
+<p>I love boba tea!</p> 
+</div> 
+<div class="funfact-back"> 
+<p>I'm in the quest for finding and tasting every boba tea shop!</p> 
+</div> 
+</div> 
+</div> 
+</div> 
+<!-- See More Button --> 
+<div class="see-more-container"> 
+<a href="funfacts.html" class="see-more-button">See More 
+Funfacts</a> 
+</div> 
+</section> 
+<div class="container"> 
+<div class="image-section"> 
+<img src="My Picture.jpg" alt="Alexander Image"> 
+</div> 
+<div class="quote-section"> 
+<h1>Hi, I'm Alexander!</h1> 
+<p>I'm an Information Technology student for the University of antique Tario-lim memorial campus with a passion for 
+programmming. 
+I'm excited to explore the ever-evolving world of technology 
+and build projects that make an impact.
+I'm also maybe an a introvert because i like to be alone sometimes. 
+My interests also lisenting to music to relax and play video games like racing games and single player story games.</p> 
+<blockquote> 
+"The only way to be better of what to do is to understand and learn to be better of your self." 
+</blockquote> 
+</div> 
+</div> 
+<footer> 
+<p>&copy; 2025 Alexander Arciaga. All rights reserved.</p> 
+</footer> 
+<div class="footer-divider"></div> <!-- Orange line --> 
+<!-- Lightbox Container --> 
+<div id="lightbox" class="lightbox" onclick="closeLightbox()"> 
+<span class="close" onclick="event.stopPropagation(); 
+closeLightbox()">&times;</span> 
+<img class="lightbox-content" id="lightboxImage" src=""> 
+</div> 
+<!-- Embedded JavaScript --> 
+<script> 
+const slides = document.querySelector('.slides'); 
+let index = 0; 
+function showNextSlide() { 
+index = (index + 1) % 3; 
+slides.style.transform = 'translateX(' + (-index * 100) + '%)'; 
+} 
+setInterval(showNextSlide, 3000); // Change slide every 3 
+seconds 
+function openLightbox(imageSrc) { 
+const lightbox = document.getElementById('lightbox'); 
+const lightboxImage = 
+document.getElementById('lightboxImage'); 
+lightboxImage.src = imageSrc; 
+lightbox.style.display = 'block';
+// Hide header and nav 
+document.querySelector('header').style.display = 'none';  
+ 
+// Hides the header 
+document.querySelector('nav').style.display = 'none';  
+ 
+// Hides the nav 
+} 
+function closeLightbox() { 
+const lightbox = document.getElementById('lightbox'); 
+lightbox.style.display = 'none'; 
+ 
+// Show header and nav 
+document.querySelector('header').style.display = 'block';  
+ 
+// Shows the header 
+document.querySelector('nav').style.display = 'flex'; // Shows the nav 
+} 
+document.addEventListener('DOMContentLoaded', function () { 
+const logoutButton = document.querySelector('.logout-button .dropbtn'); 
+const logoutDropdown = document.querySelector('.logoutdropdown'); 
+ 
+// Toggle dropdown visibility on button click 
+logoutButton.addEventListener('click', function () { 
+logoutDropdown.style.display = 
+logoutDropdown.style.display === 'block' ? 'none' : 'block'; 
+}); 
+ 
+// Close dropdown if clicking outside of it 
+window.addEventListener('click', function (event) { 
+if (!event.target.matches('.dropbtn')) { 
+if (logoutDropdown.style.display === 'block') { 
+logoutDropdown.style.display = 'none'; 
+} 
+} 
+}); 
+}); 
+ 
+</script> 
+<script> 
+ 
+// Logout function with confirmation 
+function confirmLogout() { 
+ 
+// Show a confirmation message to the user 
+const confirmLogout = confirm("Are you sure you want to log out?"); 
+ 
+// If the user confirms, proceed with logging out 
+if (confirmLogout) { 
+ 
+// Mark the user as logged out in localStorage (if used) 
+localStorage.removeItem('isLoggedIn'); // Or any other keys related to login credentials 
+ 
+// Redirect to the login page 
+window.location.href = 'login.html'; 
+} else { 
+ 
+// If the user cancels, do nothing 
+return; 
+} 
+} 
+</script> 
+</body> 
+</html>
